@@ -30,6 +30,9 @@ def tokenize_regex(pattern: str) -> typing.List[str]:
             tokens.append(pattern[i])
             i += 1
     return tokens
+
+
+
 def match_pattern(input_line: str, pattern_list: typing.List[str]) -> bool:
     if len(input_line) == 0 and len(pattern_list) == 0:
         return True
@@ -76,6 +79,9 @@ def main():
     if sys.argv[1] != "-E":
         print("Expected first argument to be '-E'")
         exit(1)
+        
+    pattern_list = tokenize_regex(pattern)
+
     if match_pattern(input_line, pattern):
         exit(0)
     else:
