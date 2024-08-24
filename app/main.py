@@ -79,10 +79,8 @@ def main():
     if sys.argv[1] != "-E":
         print("Expected first argument to be '-E'")
         exit(1)
-        
     pattern_list = tokenize_regex(pattern)
-
-    if match_pattern(input_line, pattern):
+    if match_pattern(input_line, pattern_list):
         exit(0)
     else:
         exit(1)
